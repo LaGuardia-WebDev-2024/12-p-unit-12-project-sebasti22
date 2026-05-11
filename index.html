@@ -21,40 +21,40 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Me!</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        🕰️ What is my favorite decade?
+        <select id="decade-answer">
+          <option value="decade1">90s</option>
+          <option value="decade2">10s</option>
+          <option value="decade3">30s</option>
+          <option value="decade4">80s</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check decade Answer</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="decade-result">
+      <p id="decade-text"></p>
     </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        🧑‍🎤Who is my favorite singer?
+        <select id="singer-answer">
+          <option value="singer1">Ed Sheeran</option>
+          <option value="singer2">Britney Spears</option>
+          <option value="singer3">Gracie Abrams</option>
+          <option value="singer4">Lady Gaga</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check singer Answer</button>
     </form>
-    <div id="book-result">
-      <p id="book-text"></p>
+    <div id="singer-result">
+      <p id="singer-text"></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
@@ -63,14 +63,20 @@ Select ONE Additional Feature to Add
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#decade-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+        if (answer === "decade1") {
+          $("#decade-text").text("YESSSS! New York in the 90s is something I wish I could have experienced..");
         } 
-        else {
-          $("#movie-text").text("Try Again!");
+        if (answer === "decade2") {
+          $("#decade-text").text("2010s was iconic, but not quite!");
+        }  
+        if (answer === "decade3") {
+          $("#decade-text").text("no...scary time idk.");
+        }
+        if (answer === "decade4") {
+          $("#decade-text").text("LOVE the 80s, but there were a ton of problems..");
         }
       });
 
@@ -78,19 +84,39 @@ Select ONE Additional Feature to Add
       $("#book-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#singer-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
-        } 
-        else {
-          $("#book-text").text("Try Again!");
+        if (answer === "singer4") {
+          $("#singer-text").text("YESSSS! you finally got it. She's absolutley an icon and trailbazer for me that inspires me consistently.");
+        }
+        if (answer === "singer2") {
+          $("singer-text").text("love Britney! But not my number 1 of all timeee");
+        }  
+        if (answer === "singer3") {
+          $("singer-text").text("Blocked");
+        }
+        if (answer === "singer1") {
+          $("singer-text").text("Blocked");    
         }
       });
       
     </script>
   </body>
+  <h1>Image hints of answers..</h1>
+  
+  <img
+    src="https://www.watchmojo.com/uploads/thumbs720/MsMojo-LL-Top10-Decade-Defining-Fashion-Trends-Of-The-1990s-720p30-1.jpg" alt="decade?"
+    width="210"
+    >
+    <img
+      src="https://lifeinaskillet.com/site/wp-content/uploads/2011/07/lady-gaga-meat-shoes.jpg" alt="gaga dress"
+      width="210"
+      >
+   <img
+     src="https://i.redd.it/hczrz0zaaevb1.jpg" alt="90s nyc"
+     width="210"
+     >   
 
   <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
 </html>
